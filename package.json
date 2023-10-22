@@ -1,5 +1,6 @@
 {
   "name": "smart-quiz",
+  "homepage": "https://AfonsoFaria20s.github.io/smart-quiz/",
   "version": "0.1.0",
   "private": false,
   "proxy": "https://localhost:8001/",
