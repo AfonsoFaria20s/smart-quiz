@@ -1,0 +1,77 @@
+.stats-container {
+    position: relative;
+    width: 130vh;
+    min-height: 450px;
+    border-radius: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20px;
+    z-index: 100;
+    box-shadow: 0 0 10px slategray;
+    background-color: white;
+}
+
+.header {
+    position: relative;
+    display: flex;
+    top: 0;
+    box-shadow: 0 0 5px slategray;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    height: 40px;
+    align-items: center;
+    user-select: none;
+}
+
+#title {
+    position: relative;
+    margin: 0 auto;
+    font-size: 1.22rem;
+}
+
+#close {
+    position: absolute;
+    right: 15px;
+    cursor: pointer;
+    border-radius: 30px;
+    padding: 5px;
+    transition: .3s;
+}
+
+#close:hover {
+    background-color: rgba(0, 0, 0, 0.125);
+    transition: .3s;
+}
+
+.content {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+}
+
+#result-title {
+    position: relative;
+    font-size: 2rem;
+    font-weight: 500;
+    margin: 10px auto;
+    margin-top: 20px;
+}
+
+.right-wrong {
+    margin: 10px auto;
+    font-size: 1.2rem;
+}
+
+.wrong-right-questions {
+    display: flex;
+    flex-direction: column;
+}
+
+.stats-quests-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,115 @@
+$black: rgb(34, 40, 49);
+$darker: rgb(57, 62, 70);
+$darker-hover: rgba(57, 62, 70, 0.125);
+$grey: rgb(238, 238, 238);
+$teal: rgb(0, 173, 181);
+
+.navbar {
+    position: relative;
+    display: flex;
+    height: 50px;
+    width: 85%;
+    margin: 10px auto;
+    // background-color: $teal;
+    // border-bottom-left-radius: 20px;
+    // border-bottom-right-radius: 20px;
+    // box-shadow: 0 0 7px $teal;
+}
+
+#navbar-sep {
+    border: none;
+    height: 1px;
+    color: $darker-hover;
+    background-color: $darker-hover;
+    width: 90%;
+}
+
+.logo {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin-left: 30px;
+    cursor: pointer;
+    user-select: none;
+
+    #logo-img {
+        position: relative;
+        height: 50px;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-right: 20px;
+    }
+
+    // #smart-bulb {
+    //     position: absolute;
+    //     left: 95px;
+    //     top: 48px;
+    //     transform: rotate(180deg);
+    //     height: 20px;
+    // }
+
+    span {
+        line-height: 60px;
+        font-size: 1.6rem;
+        color: $black;
+        font-weight: 500;
+
+        span {
+            margin-left: 5px;
+            color: $darker;
+            font-weight: 400;
+        }
+    }
+}
+
+.navigation {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin: auto 0;
+    margin-left: auto;
+    color: $darker;
+    user-select: none;
+    margin-top: 12px;
+
+    .diff {
+        height: 100%;
+        padding: 10px;
+        margin: auto 20px;
+        cursor: pointer;
+        transition: .3s;
+    }
+
+    .diff:hover {
+        transform: rotate(-3deg) scale(1.1115);
+        transition: .2s;
+    }
+
+    .diff span {
+        text-transform: uppercase;
+        font-weight: 400;
+        letter-spacing: 1px;
+        transition: .2s;
+    }
+
+    .profile-pic {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        border: 2px solid slategray;
+        margin: auto 10px;
+        cursor: pointer;
+
+        span {
+            font-size: 35px;
+            color: slategray;
+        }
+
+        &:hover {
+            transform: scale(1.1);
+            transition: .3s;
+        }
+
+        transition: .3s;
+    }
+}

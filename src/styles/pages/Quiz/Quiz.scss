@@ -1,0 +1,22 @@
+$black: rgb(34, 40, 49);
+$darker: rgb(57, 62, 70);
+$darker-hover: rgba(57, 62, 70, 0.125);
+$dark-grey: rgb(165, 165, 165);
+$grey: rgb(238, 238, 238);
+$teal: rgb(0, 173, 181);
+$green: rgb(57, 221, 92);
+$green-hover: rgba(37, 180, 68, 0.747);
+$categ-box-shadow: 0 0 10px $darker-hover;
+$main: rgb(241, 186, 65);
+$main-darker: rgb(182, 140, 50);
+
+.quiz-content {
+    position: relative;
+    width: 100%;
+    margin: auto;
+}
+
+hr {
+    margin: 20px auto;
+    width: 70%;
+}

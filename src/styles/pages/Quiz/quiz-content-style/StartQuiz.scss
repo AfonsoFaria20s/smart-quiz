@@ -1,0 +1,117 @@
+$black: rgb(34, 40, 49);
+$darker: rgb(57, 62, 70);
+$darker-hover: rgba(57, 62, 70, 0.125);
+$dark-grey: rgb(165, 165, 165);
+$grey: rgb(238, 238, 238);
+$teal: rgb(0, 173, 181);
+$green: rgb(57, 221, 92);
+$green-hover: rgba(37, 180, 68, 0.747);
+$categ-box-shadow: 0 0 10px $darker-hover;
+$main: rgb(241, 186, 65);
+$main-darker: rgb(182, 140, 50);
+
+.start-quiz {
+    height: 450px;
+    width: 60%;
+    margin: 0 auto;
+    background-position: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+    .front {
+        width: 100%;
+        height: 100%;
+        background-color: rgb(0, 0, 0, 0.4);
+        backdrop-filter: blur(5px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        #title {
+            color: white;
+            text-shadow: 0 0 2px white;
+            font-weight: 400;
+            letter-spacing: 5px;
+            font-size: 3rem;
+        }
+
+        hr {
+            background-image: linear-gradient(90deg, transparent, white, transparent);
+            border: 0;
+            height: 1px;
+            margin: 40px 0;
+        }
+
+        #label-ready {
+            color: white;
+            font-size: 2rem;
+            font-weight: 500;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .options {
+            margin: 20px auto;
+            display: flex;
+            flex-direction: row;
+
+            button {
+                position: relative;
+                height: 70px;
+                width: 160px;
+                margin: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid $main-darker;
+                background-color: $main;
+                transition: .3s ease;
+                overflow: hidden;
+                border-radius: 10px;
+                cursor: pointer;
+                text-transform: uppercase;
+                font-size: 1.1rem;
+                letter-spacing: 1px;
+                color: black;
+                font-size: 1.6rem;
+            }
+
+            .start::before,
+            .start::after {
+                position: absolute;
+                display: block;
+                content: "";
+                width: 100%;
+                height: 100%;
+            }
+
+            .start:after {
+                left: -100%;
+                clip-path: polygon(10% 0, 70% 0, 90% 100%, 30% 100%);
+                background-color: rgba(255, 255, 255, 0.6);
+                transition: all 300ms ease;
+            }
+
+            .start:hover::after {
+                left: 100%;
+            }
+
+            .start:hover {
+                border-radius: 0px;
+                transition: .3s;
+            }
+
+            .back {
+                background-color: rgb(233, 44, 44);
+                border: rgb(172, 33, 33);
+            }
+
+            .back:hover {
+                transform: scale(0.95);
+            }
+        }
+    }
+}

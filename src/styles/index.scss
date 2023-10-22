@@ -1,0 +1,16 @@
+$black: rgb(34, 40, 49);
+$darker: rgb(57, 62, 70);
+$darker-hover: rgba(57, 62, 70, 0.125);
+$grey: rgb(238, 238, 238);
+$teal: rgb(0, 173, 181);
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f6;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

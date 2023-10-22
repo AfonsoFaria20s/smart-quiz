@@ -1,0 +1,21 @@
+.correct-question {
+    position: relative;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 10px 30px;
+    text-align: center;
+    display: flex;
+    font-size: 1.3rem;
+    flex-direction: column;
+    padding: 10px;
+    background-color: rgba(60, 214, 60, 0.767);
+}
+
+#stats-correct {
+    font-size: 1.2rem;
+}
+
+#stats-correct-pre-label {
+    font-size: 1.2;
+    padding: 20px;
+}

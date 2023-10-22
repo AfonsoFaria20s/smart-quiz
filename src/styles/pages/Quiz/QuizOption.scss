@@ -1,0 +1,40 @@
+$black: rgb(34, 40, 49);
+$darker: rgb(57, 62, 70);
+$darker-hover: rgba(57, 62, 70, 0.125);
+$dark-grey: rgb(165, 165, 165);
+$grey: rgb(238, 238, 238);
+$teal: rgb(0, 173, 181);
+$green: rgb(57, 221, 92);
+$green-hover: rgba(37, 180, 68, 0.747);
+$categ-box-shadow: 0 0 10px $darker-hover;
+$main: rgb(241, 186, 65);
+$main-lighter: rgb(255, 203, 91);
+$main-darker: rgb(182, 140, 50);
+
+.button-opt {
+    flex: 40%;
+    /* border: 1px solid $black; */
+    margin: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    border-radius: 7px;
+    outline: none;
+    cursor: pointer;
+    transition: .3s;
+    font-size: 3vh;
+    /* color: rgb(0, 173, 181); */
+    background-color: $main;
+    border: 1px solid $main-darker;
+    color: white;
+}
+
+.button-opt:hover {
+    transition: .3s;
+    /* background-color: rgb(224, 224, 224); */
+    transform: translateY(-5px) translateX(-5px);
+    box-shadow: 5px 5px 2px 1px $main-darker;
+}
