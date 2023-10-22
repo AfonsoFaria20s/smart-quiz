@@ -1,7 +1,17 @@
 # `Updates`
 
-  # Test it out!!
-  `https://smart-quiz.pages.dev/`
+  # Test it out!! Official release V.1.0 (22-10-2023)
+  `Bug fixes`
+
+  - Api error when request is made
+  - Storing api data fixed
+  - App not finding api elements
+
+  `Features`
+
+  - Click sound when selected option
+  - New stats UI
+  - `Website is now public!! Url: https://smart-quiz.pages.dev/`
 
   # Beta V.0.3 (07-10-2023)
   `Features`
