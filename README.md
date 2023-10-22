@@ -11,7 +11,7 @@
 
   - Click sound when selected option
   - New stats UI
-  - `Website is now public!! Url: https://smart-quiz.pages.dev/`
+  - Website is now public!! Url: https://smart-quiz.pages.dev/
 
   # Beta V.0.3 (07-10-2023)
   `Features`
