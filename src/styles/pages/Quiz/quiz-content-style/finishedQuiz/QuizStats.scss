@@ -1,21 +1,18 @@
 .stats-container {
     position: relative;
-    width: 130vh;
+    width: 70%;
     min-height: 450px;
     border-radius: 15px;
     left: 50%;
     transform: translateX(-50%);
     top: 20px;
     z-index: 100;
-    box-shadow: 0 0 10px slategray;
-    background-color: white;
 }
 
 .header {
     position: relative;
     display: flex;
     top: 0;
-    box-shadow: 0 0 5px slategray;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     height: 40px;

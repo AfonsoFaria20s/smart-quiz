@@ -12,7 +12,6 @@ $main-darker: rgb(182, 140, 50);
 
 .quiz-display {
     height: 70vh;
-    width: 60%;
     margin: 0 auto;
     background-position: 0;
     background-repeat: no-repeat;
@@ -42,32 +41,59 @@ $main-darker: rgb(182, 140, 50);
         top: 0;
         display: flex;
         align-items: center;
+        justify-content: center;
+        text-align: center;
         font-weight: 500;
 
         #quest-num {
             font-size: 1.6rem;
             margin: 0 auto;
         }
-
-        #time {
-            font-size: 1.2rem;
-            right: 20px;
-            position: absolute;
-        }
     }
 
     #question {
         font-size: 4vh;
+        line-height: 15vh;
         text-align: center;
-        justify-content: center;
+        margin: 20px;
         width: 80%;
         height: 15vh;
         font-weight: 500;
-        margin: 20px 50px;
         background-color: $grey;
         border-radius: 10px;
         padding: 2vh;
         margin-top: 70px;
         color: rgb(0, 0, 0);
+        overflow-y: scroll;
+    }
+
+    @media only screen and (max-width:700px) {
+        .options button {
+            transform: scale(0.8);
+        }
+
+        #question {
+            font-size: 2vh;
+        }
+    }
+
+    @media only screen and (max-width:500px) {
+        .options {
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: column;
+        }
+
+        .options button {
+            width: 80%;
+            font-size: 1.1rem;
+            height: 7vh;
+        }
+
+        #question {
+            font-size: 3vh;
+            width: 100%;
+            border-radius: 0px;
+        }
     }
 }

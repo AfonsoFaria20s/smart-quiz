@@ -92,24 +92,31 @@ $teal: rgb(0, 173, 181);
         transition: .2s;
     }
 
-    .profile-pic {
-        width: 35px;
-        height: 35px;
-        border-radius: 50%;
-        border: 2px solid slategray;
-        margin: auto 10px;
-        cursor: pointer;
-
-        span {
-            font-size: 35px;
-            color: slategray;
+    @media only screen and (max-width:777px) {
+        .home {
+            visibility: hidden;
+            width: 0px;
         }
-
-        &:hover {
-            transform: scale(1.1);
-            transition: .3s;
-        }
-
-        transition: .3s;
     }
+
+    // .profile-pic {
+    //     width: 35px;
+    //     height: 35px;
+    //     border-radius: 50%;
+    //     border: 2px solid slategray;
+    //     margin: auto 10px;
+    //     cursor: pointer;
+
+    //     span {
+    //         font-size: 35px;
+    //         color: slategray;
+    //     }
+
+    //     &:hover {
+    //         transform: scale(1.1);
+    //         transition: .3s;
+    //     }
+
+    //     transition: .3s;
+    // }
 }

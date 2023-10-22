@@ -41,7 +41,7 @@ function NavBar() {
                         }}>
                         <span >settings</span>
                     </div>
-                    <div
+                    {/* <div
                         className="account"
                         title="Account"
                         onClick={() => {
@@ -51,7 +51,7 @@ function NavBar() {
                         <div className="profile-pic">
                             <span className="material-symbols-outlined ">account_circle</span>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             <hr id="navbar-sep" />
