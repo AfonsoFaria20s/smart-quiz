@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import "../../styles/pages/Quiz/quiz-content-style/QuizDisplay.scss"
 import Option from './QuizOption'
 import { useId } from "react"
 import { decode } from 'html-entities';
 import Stats from './final-stats-display/Stats';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import click from "../../res/sounds/clicks/light-click.mp3";
 
 const QuizDisplay = (props) => {
     const id = useId()
-    const location = useLocation()
+    // const location = useLocation()
 
     // eslint-disable-next-line
     let [questions, setQuestions] = useState(props.questions)
@@ -17,8 +17,8 @@ const QuizDisplay = (props) => {
 
     let answers = [questContent.correct_answer, questContent.incorrect_answers[0], questContent.incorrect_answers[1], questContent.incorrect_answers[2]]
 
-    let categName = location.state.categName;
-    let image = location.state.style;
+    // let categName = location.state.categName;
+    // let image = location.state.style;
 
     const shuffle = () => {
         answers.sort(() => Math.random() - 0.5);

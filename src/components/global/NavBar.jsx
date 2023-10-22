@@ -1,20 +1,10 @@
-import { useEffect, useState } from "react";
 import logo from "../../res/logo.png"
 import "../../styles/global/Navbar.scss"
 import { useNavigate } from "react-router-dom";
 
 function NavBar() {
 
-    if (localStorage.getItem("hasLogin") === null) {
-        localStorage.setItem("hasLogin", false);
-    }
-
     const nav = useNavigate()
-    let [hasLogin, setHasLogin] = useState();
-
-    useEffect(() => {
-        setHasLogin(localStorage.getItem("hasLogin"));
-    })
 
     return (
         <>

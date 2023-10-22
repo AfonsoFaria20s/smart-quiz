@@ -22,13 +22,15 @@ function Quiz(props) {
 
     // eslint-disable-next-line
     useEffect(() => {
+        let key;
         axios.get("https://opentdb.com/api.php?amount=10&category=" + key + "&type=multiple")
             .then(res => {
                 setApiCallInfo(res.data.results)
+                key = res;
             }).catch(e => {
                 console.log(e);
             });
-    }, [])
+    }, [key])
 
     const addQuizCount_localStorage = () => {
         let quizCount = parseInt(localStorage.getItem("quiz_count"))

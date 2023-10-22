@@ -5,10 +5,10 @@ import CorrectQuestion from './CorrectQuestion';
 
 const Stats = (props) => {
 
+   // eslint-disable-next-line
    let [wrongQuests, setWrongQuests] = useState(props.wrongQuests)
+   // eslint-disable-next-line
    let [correctQuests, setCorrectQuests] = useState(props.correctQuests)
-
-   console.log(props.correctCount);
 
    return (
       <div className='stats-container'>
