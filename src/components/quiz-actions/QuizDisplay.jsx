@@ -15,6 +15,7 @@ const QuizDisplay = (props) => {
     let [questions, setQuestions] = useState(props.questions)
     let [questContent, setQuestContent] = useState(questions[0])
 
+    // eslint-disable-next-line
     let answers = [questContent.correct_answer, questContent.incorrect_answers[0], questContent.incorrect_answers[1], questContent.incorrect_answers[2]]
 
     // let categName = location.state.categName;

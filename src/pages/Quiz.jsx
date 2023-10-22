@@ -15,22 +15,22 @@ function Quiz(props) {
     // let image = location.state.image;
     let image = location.state.style;// Image inside style
 
-    let [apiCallInfo, setApiCallInfo] = useState([])
-    let key = id;
-
     let [quizStarted, setQuizStarted] = useState(false)
 
     // eslint-disable-next-line
+    const [triviaData, setTriviaData] = useState([]);
+
     useEffect(() => {
-        let key;
-        axios.get("https://opentdb.com/api.php?amount=10&category=" + key + "&type=multiple")
-            .then(res => {
-                setApiCallInfo(res.data.results)
-                key = res;
-            }).catch(e => {
-                console.log(e);
+        // Faz a solicitação à API usando Axios
+        axios.get('https://opentdb.com/api.php?amount=10&category=' + id + '&type=multiple')
+            .then(response => {
+                // Atualiza o estado com os dados da API
+                setTriviaData(response.data.results);
+            })
+            .catch(error => {
+                console.error('Erro ao buscar os dados da API:', error);
             });
-    }, [key])
+    }, [id]);
 
     const addQuizCount_localStorage = () => {
         let quizCount = parseInt(localStorage.getItem("quiz_count"))
@@ -46,7 +46,7 @@ function Quiz(props) {
         <>
             <NavBar />
             <div className="quiz-content">
-                {quizStarted ? (<QuizDisplay style={image} questions={apiCallInfo} />) : (<StartQuiz categName={categName} startQuizEvent={startQuiz} style={image} />)}
+                {quizStarted ? (<QuizDisplay style={image} questions={triviaData} />) : (<StartQuiz categName={categName} startQuizEvent={startQuiz} style={image} />)}
             </div>
         </>
     )
