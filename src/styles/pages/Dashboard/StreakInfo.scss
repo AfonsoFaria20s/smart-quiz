@@ -1,0 +1,21 @@
+$title-fontsize: 1.7rem;
+$data-fontsize: 1.2rem;
+
+.dataStreak {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+#title {
+    font-size: $title-fontsize;
+    margin: 10px;
+}
+
+#data {
+    font-size: $data-fontsize;
+    margin: 10px;
+}
