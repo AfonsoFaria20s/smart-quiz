@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import NavBar from '../components/global/NavBar';
 import "../styles/pages/Dashboard/Dashboard.scss"
