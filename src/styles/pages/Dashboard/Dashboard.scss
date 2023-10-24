@@ -1,0 +1,50 @@
+$black: rgb(34, 40, 49);
+$darker: rgb(57, 62, 70);
+$darker-hover: rgba(57, 62, 70, 0.377);
+$grey: rgb(238, 238, 238);
+$teal: rgb(0, 173, 181);
+
+.content {
+    position: relative;
+    max-width: 80%;
+    margin: 0 auto;
+
+    .streaks-info {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .info-card {
+        width: 100%;
+        margin: 30px auto;
+        border: 1px solid $grey;
+        background-color: white;
+        box-shadow: 0 0 10px $darker-hover;
+        border-radius: 10px;
+        margin-top: 40px;
+        min-height: 100px;
+    }
+
+    .info-card-half {
+        border: 1px solid $grey;
+        background-color: white;
+        box-shadow: 0 0 10px $darker-hover;
+        border-radius: 10px;
+        margin-top: 40px;
+        min-height: 125px;
+        flex: 0 0 calc(50% - 45px);
+    }
+
+    .card-half-handler {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media only screen and (max-width: 935px) {
+    .streaks-info {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
