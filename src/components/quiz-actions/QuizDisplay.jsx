@@ -6,6 +6,7 @@ import { decode } from 'html-entities';
 import Stats from './final-stats-display/Stats';
 import { useNavigate } from 'react-router-dom';
 import click from "../../res/sounds/clicks/light-click.mp3";
+import { getCurrentStreak, getHighStreak, resetCurrentStrek, updateCurrentStreak, updateHighStreak } from '../../data/userData/Streaks';
 
 const QuizDisplay = (props) => {
     const id = useId()
@@ -17,6 +18,8 @@ const QuizDisplay = (props) => {
 
     // eslint-disable-next-line
     let answers = [questContent.correct_answer, questContent.incorrect_answers[0], questContent.incorrect_answers[1], questContent.incorrect_answers[2]]
+
+    console.log(questContent.correct_answer);
 
     // let categName = location.state.categName;
     // let image = location.state.style;
@@ -47,6 +50,14 @@ const QuizDisplay = (props) => {
             setQuestContent(questions[index + 1])
         } else {
             setOpenStats(true)
+            if ((correct * 10) > 40) {
+                updateCurrentStreak();
+                if (getCurrentStreak > getHighStreak) {
+                    updateHighStreak()
+                }
+            } else {
+                resetCurrentStrek();
+            }
         }
     }
 
@@ -58,9 +69,6 @@ const QuizDisplay = (props) => {
         lightClick_sound.play();
         let selected = e.target.innerHTML.split(" ").join("");
         let curr_correct = questContent.correct_answer.split(" ").join("");
-
-        console.log(selected);
-        console.log(curr_correct);
 
         if (selected === curr_correct) {
             setCorrect(correct + 1)

@@ -30,6 +30,7 @@ function Quiz(props) {
             .catch(error => {
                 console.error('Erro ao buscar os dados da API:', error);
             });
+        console.log(JSON.stringify(triviaData[0]));
     }, [id]);
 
     const addQuizCount_localStorage = () => {

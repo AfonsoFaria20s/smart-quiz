@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React from 'react';
+import React, { useState } from 'react';
 import NavBar from '../components/global/NavBar';
 import "../styles/pages/Dashboard/Dashboard.scss"
 import StreakInfo from '../components/dashboard/StreakInfo';
@@ -11,18 +11,23 @@ import {
     getData, updateData
 } from '../data/userData/TimesPlayed';
 import { Chart } from 'react-google-charts';
+import { getCurrentStreak, getHighStreak } from '../data/userData/Streaks';
 
 const Dashboard = () => {
+
+    const [currentStreak, setCurrentStreak] = useState(getCurrentStreak());
+    const [highestStreak, setHighestStreak] = useState(getHighStreak());
+
     return (
         <>
             <NavBar />
             <div className='content'>
                 <div className='streaks-info info-card'>
                     <div className="current-str" title='Number of quizzes with 50%+'>
-                        <StreakInfo title={"Current Streak"} data={"data"} />
+                        <StreakInfo title={"Current Streak"} data={currentStreak} />
                     </div>
                     <div className="highest-str" title='Highest streak of positive quizzes'>
-                        <StreakInfo title={"Highest Streak"} data={"data"} />
+                        <StreakInfo title={"Highest Streak"} data={highestStreak} />
                     </div>
                     <div className="average-streak-negative" title='Average streak loss'>
                         <StreakInfo title={"Average Streak"} data={"data"} />

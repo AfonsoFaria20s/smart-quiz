@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "../../../styles/pages/Quiz/quiz-content-style/finishedQuiz/QuizStats.scss"
 import WrongQuestion from './WrongQuestion';
 import CorrectQuestion from './CorrectQuestion';
+import {
+   updateCurrentStreak, getCurrentStreak,
+   resetCurrentStrek
+} from '../../../data/userData/Streaks';
 
 const Stats = (props) => {
 
@@ -31,6 +35,7 @@ const Stats = (props) => {
                         correct={quest.correct_answer}
                      />
                   })
+
                }
                {/* {
                   props.correctCount != 0
