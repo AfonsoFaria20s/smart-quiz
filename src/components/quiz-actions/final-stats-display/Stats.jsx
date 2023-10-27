@@ -31,6 +31,7 @@ const Stats = (props) => {
                         correct={quest.correct_answer}
                      />
                   })
+
                }
                {/* {
                   props.correctCount != 0

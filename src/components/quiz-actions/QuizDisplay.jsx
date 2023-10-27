@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React, { useState } from 'react';
 import "../../styles/pages/Quiz/quiz-content-style/QuizDisplay.scss"
 import Option from './QuizOption'
@@ -6,17 +8,19 @@ import { decode } from 'html-entities';
 import Stats from './final-stats-display/Stats';
 import { useNavigate } from 'react-router-dom';
 import click from "../../res/sounds/clicks/light-click.mp3";
+import { getCurrentStreak, getFromStorage, getHighStreak, resetCurrentStrek, updateAverageStreak, updateCurrentStreak, updateHighStreak, updateStorage } from '../../data/userData/Streaks';
+import { setNegativeQuizCount, setPositiveQuizCount } from '../../data/userData/QuizPlayed';
 
 const QuizDisplay = (props) => {
     const id = useId()
     // const location = useLocation()
 
-    // eslint-disable-next-line
     let [questions, setQuestions] = useState(props.questions)
     let [questContent, setQuestContent] = useState(questions[0])
 
-    // eslint-disable-next-line
     let answers = [questContent.correct_answer, questContent.incorrect_answers[0], questContent.incorrect_answers[1], questContent.incorrect_answers[2]]
+
+    console.log(questContent.correct_answer);
 
     // let categName = location.state.categName;
     // let image = location.state.style;
@@ -42,12 +46,31 @@ const QuizDisplay = (props) => {
     }
 
     const nextQuestion = () => {
-        shuffle()
         if ((index + 1) < 10) {
             setQuestContent(questions[index + 1])
         } else {
+            // After quiz is finished
             setOpenStats(true)
+
+            if ((correct * 10) > 40) {
+                updateCurrentStreak();
+
+                if (getFromStorage("highestStreak") == null) {
+                    updateStorage("highestStreak", 0);
+                }
+
+                if (getCurrentStreak() > getHighStreak()) {
+                    updateHighStreak();
+                }
+
+                setPositiveQuizCount();
+            } else {
+                setNegativeQuizCount();
+                resetCurrentStrek();
+            }
         }
+        updateAverageStreak();
+        shuffle()
     }
 
     function sleep(ms) {
@@ -58,9 +81,6 @@ const QuizDisplay = (props) => {
         lightClick_sound.play();
         let selected = e.target.innerHTML.split(" ").join("");
         let curr_correct = questContent.correct_answer.split(" ").join("");
-
-        console.log(selected);
-        console.log(curr_correct);
 
         if (selected === curr_correct) {
             setCorrect(correct + 1)

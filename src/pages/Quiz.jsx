@@ -5,6 +5,7 @@ import QuizDisplay from "../components/quiz-actions/QuizDisplay";
 import "../styles/pages/Quiz/Quiz.scss"
 import { useLocation } from "react-router-dom";
 import NavBar from "../components/global/NavBar";
+import { updateQuizCount } from "../data/userData/QuizCount";
 
 function Quiz(props) {
 
@@ -33,8 +34,7 @@ function Quiz(props) {
     }, [id]);
 
     const addQuizCount_localStorage = () => {
-        let quizCount = parseInt(localStorage.getItem("quiz_count"))
-        localStorage.setItem("quiz_count", quizCount + 1)
+        updateQuizCount()
     }
 
     const startQuiz = () => {
