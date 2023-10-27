@@ -6,7 +6,8 @@ import { decode } from 'html-entities';
 import Stats from './final-stats-display/Stats';
 import { useNavigate } from 'react-router-dom';
 import click from "../../res/sounds/clicks/light-click.mp3";
-import { getCurrentStreak, getHighStreak, resetCurrentStrek, updateCurrentStreak, updateHighStreak } from '../../data/userData/Streaks';
+import { getCurrentStreak, getFromStorage, getHighStreak, resetCurrentStrek, updateAverageStreak, updateCurrentStreak, updateHighStreak, updateStorage } from '../../data/userData/Streaks';
+import { setNegativeQuizCount, setPositiveQuizCount } from '../../data/userData/QuizPlayed';
 
 const QuizDisplay = (props) => {
     const id = useId()
@@ -45,20 +46,31 @@ const QuizDisplay = (props) => {
     }
 
     const nextQuestion = () => {
-        shuffle()
         if ((index + 1) < 10) {
             setQuestContent(questions[index + 1])
         } else {
+            // After quiz is finished
             setOpenStats(true)
+
             if ((correct * 10) > 40) {
                 updateCurrentStreak();
-                if (getCurrentStreak > getHighStreak) {
-                    updateHighStreak()
+
+                if (getFromStorage("highestStreak") == null) {
+                    updateStorage("highestStreak", 0);
                 }
+
+                if (getCurrentStreak() > getHighStreak()) {
+                    updateHighStreak();
+                }
+
+                setPositiveQuizCount();
             } else {
+                setNegativeQuizCount();
                 resetCurrentStrek();
             }
         }
+        updateAverageStreak();
+        shuffle()
     }
 
     function sleep(ms) {
