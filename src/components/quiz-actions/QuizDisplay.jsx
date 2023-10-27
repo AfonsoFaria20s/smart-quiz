@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React, { useState } from 'react';
 import "../../styles/pages/Quiz/quiz-content-style/QuizDisplay.scss"
 import Option from './QuizOption'
@@ -13,11 +15,9 @@ const QuizDisplay = (props) => {
     const id = useId()
     // const location = useLocation()
 
-    // eslint-disable-next-line
     let [questions, setQuestions] = useState(props.questions)
     let [questContent, setQuestContent] = useState(questions[0])
 
-    // eslint-disable-next-line
     let answers = [questContent.correct_answer, questContent.incorrect_answers[0], questContent.incorrect_answers[1], questContent.incorrect_answers[2]]
 
     console.log(questContent.correct_answer);

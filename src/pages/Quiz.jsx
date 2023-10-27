@@ -5,7 +5,7 @@ import QuizDisplay from "../components/quiz-actions/QuizDisplay";
 import "../styles/pages/Quiz/Quiz.scss"
 import { useLocation } from "react-router-dom";
 import NavBar from "../components/global/NavBar";
-import { updateQuizCount, getQuizCount } from "../data/userData/QuizCount";
+import { updateQuizCount } from "../data/userData/QuizCount";
 
 function Quiz(props) {
 
@@ -31,7 +31,6 @@ function Quiz(props) {
             .catch(error => {
                 console.error('Erro ao buscar os dados da API:', error);
             });
-        console.log(JSON.stringify(triviaData[0]));
     }, [id]);
 
     const addQuizCount_localStorage = () => {

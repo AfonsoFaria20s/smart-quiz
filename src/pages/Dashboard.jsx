@@ -1,15 +1,9 @@
 /* eslint-disable */
+
 import React, { useState } from 'react';
 import NavBar from '../components/global/NavBar';
 import "../styles/pages/Dashboard/Dashboard.scss"
 import StreakInfo from '../components/dashboard/StreakInfo';
-// import {
-//     getHighStreak, getCurrentStreak,
-//     updateHighStreak, updateCurrentStreak
-// } from '../data/userData/Streak';
-import {
-    getQuizCount, updateQuizCount
-} from '../data/userData/QuizCount';
 import { Chart } from 'react-google-charts';
 import { getAverageStreak, getCurrentStreak, getHighStreak } from '../data/userData/Streaks';
 import { getNegativeQuizCount, getPositiveQuizCount } from '../data/userData/QuizPlayed';
