@@ -1,5 +1,16 @@
 # `Updates`
 
+  #Release V.1.1
+  `Bug fixes`
+
+  - Fixed some navigation errors
+  - CSS bug fixed
+
+  `Features`
+
+  - Added dashboard statistics (still uner development)
+  - Added footer on home page for better navigation
+
   # Test it out!! Official release V.1.0 (22-10-2023)
   `Bug fixes`
 
