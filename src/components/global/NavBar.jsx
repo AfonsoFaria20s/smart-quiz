@@ -37,7 +37,8 @@ function NavBar() {
                         className="settings diff"
                         title="Settings"
                         onClick={() => {
-                            nav("/404")
+
+
                         }}>
                         <span >settings</span>
                     </div>
