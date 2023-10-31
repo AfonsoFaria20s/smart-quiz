@@ -26,28 +26,103 @@ body {
   justify-content: center;
 
   input {
-    height: 40px;
+    height: 50px;
     width: 400px;
     outline: none;
     border: 1px solid slategray;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
     padding: 5px;
     padding-left: 15px;
     font-size: 1.1rem;
   }
 
   div {
-    padding: 0 15px;
+    padding: 0 13px;
     border: 1px solid slategray;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
     cursor: pointer;
 
     span {
       color: slategray;
-      line-height: 50px;
+      line-height: 48px;
       user-select: none;
+    }
+  }
+}
+
+.footer {
+  padding: 30px;
+  width: 100%;
+  margin-top: 30px;
+  background-color: $darker-hover;
+  text-transform: uppercase;
+
+  .upper {
+    height: 200px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+    .footer-card {
+      height: 100px;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      padding: 20px;
+      text-transform: capitalize;
+
+      span {
+        border: none;
+        background-color: rgba(0, 172, 181, 0);
+        text-align: left;
+        width: fit-content;
+        padding: 5px;
+        cursor: pointer;
+
+        &:hover {
+          color: $teal;
+          transition: .3s;
+        }
+
+        transition: .3s;
+      }
+    }
+
+    .footer-title {
+      font-size: 1.3rem;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+  }
+
+  hr {
+    color: black;
+  }
+
+  .lower {
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+
+    select {
+      width: 150px;
+    }
+
+    .language {
+      margin-left: 40px;
+      position: absolute;
+    }
+
+    span {
+      width: fit-content;
+      margin: 0 auto;
+      text-transform: capitalize;
+      letter-spacing: 1px;
     }
   }
 }

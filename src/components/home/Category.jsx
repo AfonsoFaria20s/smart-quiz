@@ -12,7 +12,6 @@ function Category(props) {
     return (
         <div className="category" key={opts.id}>
             <div className="img" style={{ backgroundImage: `url(${opts.img})` }}>
-
             </div>
             <div className="info">
                 <span>{opts.name}</span>
